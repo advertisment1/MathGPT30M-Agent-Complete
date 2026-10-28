@@ -1,0 +1,12 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+# Model checkpoints (large binaries — not for git)
+*.pt
+*.pth
+*.bin
+# Archives
+*.zip
+# WorkBuddy internal data
+.workbuddy/

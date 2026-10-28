@@ -1,0 +1,632 @@
+[
+  {
+    "round": 1,
+    "component": "attention",
+    "baseline": {
+      "config": {
+        "dim": 128,
+        "layers": 4,
+        "heads": 4,
+        "kv_heads": 2,
+        "hidden": 352,
+        "vocab": 32000,
+        "seq": 128,
+        "position": "rope",
+        "norm_type": "rms",
+        "ffn_type": "swiglu",
+        "untie": false,
+        "no_residual_scale": false
+      },
+      "metrics": {
+        "val_loss": 6.2091443464159966,
+        "tokens_seen": 512000,
+        "parameters": 4834432,
+        "tok_per_s": 12395.540033509767,
+        "step": 999
+      },
+      "path": "runs/greedy_s43/round_01_attention/candidate_0"
+    },
+    "candidates": [
+      {
+        "config": {
+          "dim": 128,
+          "layers": 4,
+          "heads": 4,
+          "kv_heads": 2,
+          "hidden": 352,
+          "vocab": 32000,
+          "seq": 128,
+          "position": "rope",
+          "norm_type": "rms",
+          "ffn_type": "swiglu",
+          "untie": false,
+          "no_residual_scale": false
+        },
+        "metrics": {
+          "val_loss": 6.2091443464159966,
+          "tokens_seen": 512000,
+          "parameters": 4834432,
+          "tok_per_s": 12395.540033509767,
+          "step": 999
+        },
+        "path": "runs/greedy_s43/round_01_attention/candidate_0"
+      },
+      {
+        "config": {
+          "dim": 128,
+          "layers": 4,
+          "heads": 4,
+          "kv_heads": 4,
+          "hidden": 352,
+          "vocab": 32000,
+          "seq": 128,
+          "position": "rope",
+          "norm_type": "rms",
+          "ffn_type": "swiglu",
+          "untie": false,
+          "no_residual_scale": false
+        },
+        "metrics": {
+          "val_loss": 6.209704086184502,
+          "tokens_seen": 512000,
+          "parameters": 4899968,
+          "tok_per_s": 12987.573022094053,
+          "step": 999
+        },
+        "path": "runs/greedy_s43/round_01_attention/candidate_1"
+      },
+      {
+        "config": {
+          "dim": 128,
+          "layers": 4,
+          "heads": 4,
+          "kv_heads": 1,
+          "hidden": 352,
+          "vocab": 32000,
+          "seq": 128,
+          "position": "rope",
+          "norm_type": "rms",
+          "ffn_type": "swiglu",
+          "untie": false,
+          "no_residual_scale": false
+        },
+        "metrics": {
+          "val_loss": 6.199895419180393,
+          "tokens_seen": 512000,
+          "parameters": 4801664,
+          "tok_per_s": 19559.40605037855,
+          "step": 999
+        },
+        "path": "runs/greedy_s43/round_01_attention/candidate_2"
+      }
+    ],
+    "promoted": true,
+    "selected_config": {
+      "dim": 128,
+      "layers": 4,
+      "heads": 4,
+      "kv_heads": 1,
+      "hidden": 352,
+      "vocab": 32000,
+      "seq": 128,
+      "position": "rope",
+      "norm_type": "rms",
+      "ffn_type": "swiglu",
+      "untie": false,
+      "no_residual_scale": false
+    },
+    "selected_metrics": {
+      "val_loss": 6.199895419180393,
+      "tokens_seen": 512000,
+      "parameters": 4801664,
+      "tok_per_s": 19559.40605037855,
+      "step": 999
+    },
+    "selection_rule": "validation loss improvement >= 0.002; single seed"
+  },
+  {
+    "round": 2,
+    "component": "position",
+    "baseline": {
+      "config": {
+        "dim": 128,
+        "layers": 4,
+        "heads": 4,
+        "kv_heads": 1,
+        "hidden": 352,
+        "vocab": 32000,
+        "seq": 128,
+        "position": "rope",
+        "norm_type": "rms",
+        "ffn_type": "swiglu",
+        "untie": false,
+        "no_residual_scale": false
+      },
+      "metrics": {
+        "val_loss": 6.199895419180393,
+        "tokens_seen": 512000,
+        "parameters": 4801664,
+        "tok_per_s": 17749.779359687374,
+        "step": 999
+      },
+      "path": "runs/greedy_s43/round_02_position/candidate_0"
+    },
+    "candidates": [
+      {
+        "config": {
+          "dim": 128,
+          "layers": 4,
+          "heads": 4,
+          "kv_heads": 1,
+          "hidden": 352,
+          "vocab": 32000,
+          "seq": 128,
+          "position": "rope",
+          "norm_type": "rms",
+          "ffn_type": "swiglu",
+          "untie": false,
+          "no_residual_scale": false
+        },
+        "metrics": {
+          "val_loss": 6.199895419180393,
+          "tokens_seen": 512000,
+          "parameters": 4801664,
+          "tok_per_s": 17749.779359687374,
+          "step": 999
+        },
+        "path": "runs/greedy_s43/round_02_position/candidate_0"
+      },
+      {
+        "config": {
+          "dim": 128,
+          "layers": 4,
+          "heads": 4,
+          "kv_heads": 1,
+          "hidden": 352,
+          "vocab": 32000,
+          "seq": 128,
+          "position": "nope",
+          "norm_type": "rms",
+          "ffn_type": "swiglu",
+          "untie": false,
+          "no_residual_scale": false
+        },
+        "metrics": {
+          "val_loss": 6.275747984647751,
+          "tokens_seen": 512000,
+          "parameters": 4801664,
+          "tok_per_s": 15112.770784421446,
+          "step": 999
+        },
+        "path": "runs/greedy_s43/round_02_position/candidate_1"
+      }
+    ],
+    "promoted": false,
+    "selected_config": {
+      "dim": 128,
+      "layers": 4,
+      "heads": 4,
+      "kv_heads": 1,
+      "hidden": 352,
+      "vocab": 32000,
+      "seq": 128,
+      "position": "rope",
+      "norm_type": "rms",
+      "ffn_type": "swiglu",
+      "untie": false,
+      "no_residual_scale": false
+    },
+    "selected_metrics": {
+      "val_loss": 6.199895419180393,
+      "tokens_seen": 512000,
+      "parameters": 4801664,
+      "tok_per_s": 17749.779359687374,
+      "step": 999
+    },
+    "selection_rule": "validation loss improvement >= 0.002; single seed"
+  },
+  {
+    "round": 3,
+    "component": "normalization",
+    "baseline": {
+      "config": {
+        "dim": 128,
+        "layers": 4,
+        "heads": 4,
+        "kv_heads": 1,
+        "hidden": 352,
+        "vocab": 32000,
+        "seq": 128,
+        "position": "rope",
+        "norm_type": "rms",
+        "ffn_type": "swiglu",
+        "untie": false,
+        "no_residual_scale": false
+      },
+      "metrics": {
+        "val_loss": 6.199895419180393,
+        "tokens_seen": 512000,
+        "parameters": 4801664,
+        "tok_per_s": 13737.27245789663,
+        "step": 999
+      },
+      "path": "runs/greedy_s43/round_03_normalization/candidate_0"
+    },
+    "candidates": [
+      {
+        "config": {
+          "dim": 128,
+          "layers": 4,
+          "heads": 4,
+          "kv_heads": 1,
+          "hidden": 352,
+          "vocab": 32000,
+          "seq": 128,
+          "position": "rope",
+          "norm_type": "rms",
+          "ffn_type": "swiglu",
+          "untie": false,
+          "no_residual_scale": false
+        },
+        "metrics": {
+          "val_loss": 6.199895419180393,
+          "tokens_seen": 512000,
+          "parameters": 4801664,
+          "tok_per_s": 13737.27245789663,
+          "step": 999
+        },
+        "path": "runs/greedy_s43/round_03_normalization/candidate_0"
+      },
+      {
+        "config": {
+          "dim": 128,
+          "layers": 4,
+          "heads": 4,
+          "kv_heads": 1,
+          "hidden": 352,
+          "vocab": 32000,
+          "seq": 128,
+          "position": "rope",
+          "norm_type": "layer",
+          "ffn_type": "swiglu",
+          "untie": false,
+          "no_residual_scale": false
+        },
+        "metrics": {
+          "val_loss": 6.199956499040127,
+          "tokens_seen": 512000,
+          "parameters": 4802816,
+          "tok_per_s": 18472.926174201722,
+          "step": 999
+        },
+        "path": "runs/greedy_s43/round_03_normalization/candidate_1"
+      }
+    ],
+    "promoted": false,
+    "selected_config": {
+      "dim": 128,
+      "layers": 4,
+      "heads": 4,
+      "kv_heads": 1,
+      "hidden": 352,
+      "vocab": 32000,
+      "seq": 128,
+      "position": "rope",
+      "norm_type": "rms",
+      "ffn_type": "swiglu",
+      "untie": false,
+      "no_residual_scale": false
+    },
+    "selected_metrics": {
+      "val_loss": 6.199895419180393,
+      "tokens_seen": 512000,
+      "parameters": 4801664,
+      "tok_per_s": 13737.27245789663,
+      "step": 999
+    },
+    "selection_rule": "validation loss improvement >= 0.002; single seed"
+  },
+  {
+    "round": 4,
+    "component": "feedforward",
+    "baseline": {
+      "config": {
+        "dim": 128,
+        "layers": 4,
+        "heads": 4,
+        "kv_heads": 1,
+        "hidden": 352,
+        "vocab": 32000,
+        "seq": 128,
+        "position": "rope",
+        "norm_type": "rms",
+        "ffn_type": "swiglu",
+        "untie": false,
+        "no_residual_scale": false
+      },
+      "metrics": {
+        "val_loss": 6.199895419180393,
+        "tokens_seen": 512000,
+        "parameters": 4801664,
+        "tok_per_s": 15609.46722490507,
+        "step": 999
+      },
+      "path": "runs/greedy_s43/round_04_feedforward/candidate_0"
+    },
+    "candidates": [
+      {
+        "config": {
+          "dim": 128,
+          "layers": 4,
+          "heads": 4,
+          "kv_heads": 1,
+          "hidden": 352,
+          "vocab": 32000,
+          "seq": 128,
+          "position": "rope",
+          "norm_type": "rms",
+          "ffn_type": "swiglu",
+          "untie": false,
+          "no_residual_scale": false
+        },
+        "metrics": {
+          "val_loss": 6.199895419180393,
+          "tokens_seen": 512000,
+          "parameters": 4801664,
+          "tok_per_s": 15609.46722490507,
+          "step": 999
+        },
+        "path": "runs/greedy_s43/round_04_feedforward/candidate_0"
+      },
+      {
+        "config": {
+          "dim": 128,
+          "layers": 4,
+          "heads": 4,
+          "kv_heads": 1,
+          "hidden": 352,
+          "vocab": 32000,
+          "seq": 128,
+          "position": "rope",
+          "norm_type": "rms",
+          "ffn_type": "gelu",
+          "untie": false,
+          "no_residual_scale": false
+        },
+        "metrics": {
+          "val_loss": 6.246001951396465,
+          "tokens_seen": 512000,
+          "parameters": 4621440,
+          "tok_per_s": 15078.505857424592,
+          "step": 999
+        },
+        "path": "runs/greedy_s43/round_04_feedforward/candidate_1"
+      }
+    ],
+    "promoted": false,
+    "selected_config": {
+      "dim": 128,
+      "layers": 4,
+      "heads": 4,
+      "kv_heads": 1,
+      "hidden": 352,
+      "vocab": 32000,
+      "seq": 128,
+      "position": "rope",
+      "norm_type": "rms",
+      "ffn_type": "swiglu",
+      "untie": false,
+      "no_residual_scale": false
+    },
+    "selected_metrics": {
+      "val_loss": 6.199895419180393,
+      "tokens_seen": 512000,
+      "parameters": 4801664,
+      "tok_per_s": 15609.46722490507,
+      "step": 999
+    },
+    "selection_rule": "validation loss improvement >= 0.002; single seed"
+  },
+  {
+    "round": 5,
+    "component": "embedding",
+    "baseline": {
+      "config": {
+        "dim": 128,
+        "layers": 4,
+        "heads": 4,
+        "kv_heads": 1,
+        "hidden": 352,
+        "vocab": 32000,
+        "seq": 128,
+        "position": "rope",
+        "norm_type": "rms",
+        "ffn_type": "swiglu",
+        "untie": false,
+        "no_residual_scale": false
+      },
+      "metrics": {
+        "val_loss": 6.199895419180393,
+        "tokens_seen": 512000,
+        "parameters": 4801664,
+        "tok_per_s": 10883.151133109364,
+        "step": 999
+      },
+      "path": "runs/greedy_s43/round_05_embedding/candidate_0"
+    },
+    "candidates": [
+      {
+        "config": {
+          "dim": 128,
+          "layers": 4,
+          "heads": 4,
+          "kv_heads": 1,
+          "hidden": 352,
+          "vocab": 32000,
+          "seq": 128,
+          "position": "rope",
+          "norm_type": "rms",
+          "ffn_type": "swiglu",
+          "untie": false,
+          "no_residual_scale": false
+        },
+        "metrics": {
+          "val_loss": 6.199895419180393,
+          "tokens_seen": 512000,
+          "parameters": 4801664,
+          "tok_per_s": 10883.151133109364,
+          "step": 999
+        },
+        "path": "runs/greedy_s43/round_05_embedding/candidate_0"
+      },
+      {
+        "config": {
+          "dim": 128,
+          "layers": 4,
+          "heads": 4,
+          "kv_heads": 1,
+          "hidden": 352,
+          "vocab": 32000,
+          "seq": 128,
+          "position": "rope",
+          "norm_type": "rms",
+          "ffn_type": "swiglu",
+          "untie": true,
+          "no_residual_scale": false
+        },
+        "metrics": {
+          "val_loss": 6.120932936668396,
+          "tokens_seen": 512000,
+          "parameters": 8897664,
+          "tok_per_s": 12526.100221240618,
+          "step": 999
+        },
+        "path": "runs/greedy_s43/round_05_embedding/candidate_1"
+      }
+    ],
+    "promoted": true,
+    "selected_config": {
+      "dim": 128,
+      "layers": 4,
+      "heads": 4,
+      "kv_heads": 1,
+      "hidden": 352,
+      "vocab": 32000,
+      "seq": 128,
+      "position": "rope",
+      "norm_type": "rms",
+      "ffn_type": "swiglu",
+      "untie": true,
+      "no_residual_scale": false
+    },
+    "selected_metrics": {
+      "val_loss": 6.120932936668396,
+      "tokens_seen": 512000,
+      "parameters": 8897664,
+      "tok_per_s": 12526.100221240618,
+      "step": 999
+    },
+    "selection_rule": "validation loss improvement >= 0.002; single seed"
+  },
+  {
+    "round": 6,
+    "component": "initialization",
+    "baseline": {
+      "config": {
+        "dim": 128,
+        "layers": 4,
+        "heads": 4,
+        "kv_heads": 1,
+        "hidden": 352,
+        "vocab": 32000,
+        "seq": 128,
+        "position": "rope",
+        "norm_type": "rms",
+        "ffn_type": "swiglu",
+        "untie": true,
+        "no_residual_scale": false
+      },
+      "metrics": {
+        "val_loss": 6.120932936668396,
+        "tokens_seen": 512000,
+        "parameters": 8897664,
+        "tok_per_s": 18814.83793958643,
+        "step": 999
+      },
+      "path": "runs/greedy_s43/round_06_initialization/candidate_0"
+    },
+    "candidates": [
+      {
+        "config": {
+          "dim": 128,
+          "layers": 4,
+          "heads": 4,
+          "kv_heads": 1,
+          "hidden": 352,
+          "vocab": 32000,
+          "seq": 128,
+          "position": "rope",
+          "norm_type": "rms",
+          "ffn_type": "swiglu",
+          "untie": true,
+          "no_residual_scale": false
+        },
+        "metrics": {
+          "val_loss": 6.120932936668396,
+          "tokens_seen": 512000,
+          "parameters": 8897664,
+          "tok_per_s": 18814.83793958643,
+          "step": 999
+        },
+        "path": "runs/greedy_s43/round_06_initialization/candidate_0"
+      },
+      {
+        "config": {
+          "dim": 128,
+          "layers": 4,
+          "heads": 4,
+          "kv_heads": 1,
+          "hidden": 352,
+          "vocab": 32000,
+          "seq": 128,
+          "position": "rope",
+          "norm_type": "rms",
+          "ffn_type": "swiglu",
+          "untie": true,
+          "no_residual_scale": true
+        },
+        "metrics": {
+          "val_loss": 6.160986118018627,
+          "tokens_seen": 512000,
+          "parameters": 8897664,
+          "tok_per_s": 11700.884176233658,
+          "step": 999
+        },
+        "path": "runs/greedy_s43/round_06_initialization/candidate_1"
+      }
+    ],
+    "promoted": false,
+    "selected_config": {
+      "dim": 128,
+      "layers": 4,
+      "heads": 4,
+      "kv_heads": 1,
+      "hidden": 352,
+      "vocab": 32000,
+      "seq": 128,
+      "position": "rope",
+      "norm_type": "rms",
+      "ffn_type": "swiglu",
+      "untie": true,
+      "no_residual_scale": false
+    },
+    "selected_metrics": {
+      "val_loss": 6.120932936668396,
+      "tokens_seen": 512000,
+      "parameters": 8897664,
+      "tok_per_s": 18814.83793958643,
+      "step": 999
+    },
+    "selection_rule": "validation loss improvement >= 0.002; single seed"
+  }
+]

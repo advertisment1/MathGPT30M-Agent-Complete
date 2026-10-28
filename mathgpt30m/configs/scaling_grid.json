@@ -1,0 +1,37 @@
+{
+  "note": "Proxy experiments only; final deployed/trained model fixed at ~30M. No completed empirical measurements. GPU-hours are wall-clock GPU allocation hours, not FLOPs.",
+  "models": [
+    {
+      "dim": 128,
+      "layers": 4,
+      "heads": 4,
+      "kv_heads": 1,
+      "hidden": 352
+    },
+    {
+      "dim": 192,
+      "layers": 6,
+      "heads": 6,
+      "kv_heads": 2,
+      "hidden": 512
+    },
+    {
+      "dim": 256,
+      "layers": 8,
+      "heads": 8,
+      "kv_heads": 2,
+      "hidden": 704
+    }
+  ],
+  "token_budgets": [
+    5000000,
+    15000000,
+    40000000
+  ],
+  "seeds": [
+    42
+  ],
+  "max_proxy_gpu_hours": 8,
+  "final_model_target_parameters": 30000000,
+  "total_gpu_hours": 48
+}

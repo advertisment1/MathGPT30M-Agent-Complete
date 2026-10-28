@@ -1,0 +1,17 @@
+{
+  "vocab_size": 32000,
+  "dim": 480,
+  "layers": 16,
+  "heads": 4,
+  "kv_heads": 2,
+  "hidden": 1440,
+  "max_seq": 1024,
+  "rope_base": 10000.0,
+  "position": "rope",
+  "norm_type": "rms",
+  "ffn_type": "swiglu",
+  "tie_embeddings": true,
+  "residual_scale": true,
+  "actual_parameters": 59612640,
+  "target_parameters": 60000000
+}

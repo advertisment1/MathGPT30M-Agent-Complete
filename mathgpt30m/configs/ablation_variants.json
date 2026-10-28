@@ -1,0 +1,13 @@
+{
+  "description": "Controlled small-scale architecture comparisons; all variants use the same model.forward(ids, targets=None, caches=None) API.",
+  "shared": {"vocab": 32000, "dim": 192, "layers": 4, "heads": 6, "hidden": 512, "seq": 256, "batch": 2, "accum": 2, "steps": 120, "warmup": 10, "decay": 20, "eval_every": 30, "eval_batches": 10, "seed": 42},
+  "variants": [
+    {"name":"gqa_rope_rms_swiglu", "kv_heads":2},
+    {"name":"mha_rope_rms_swiglu", "kv_heads":6},
+    {"name":"mqa_rope_rms_swiglu", "kv_heads":1},
+    {"name":"gqa_nope", "kv_heads":2, "position":"nope"},
+    {"name":"gqa_layernorm", "kv_heads":2, "norm_type":"layer"},
+    {"name":"gqa_gelu", "kv_heads":2, "ffn_type":"gelu", "hidden":768},
+    {"name":"gqa_untied", "kv_heads":2, "untie":true}
+  ]
+}

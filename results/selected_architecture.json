@@ -1,0 +1,15 @@
+{
+  "dim": 128,
+  "layers": 4,
+  "heads": 4,
+  "kv_heads": 2,
+  "hidden": 352,
+  "vocab": 32000,
+  "seq": 128,
+  "position": "rope",
+  "norm_type": "rms",
+  "ffn_type": "swiglu",
+  "untie": false,
+  "no_residual_scale": false,
+  "review_note": "3-seed x 1000-step ablation: no robust gain over baseline. kv diverged(42:GQA/43:MQA/44:MHA)=noise->2; norm 1/3 layer->rms; ffn 3/3 swiglu; untie 3/3 promoted but doubles params->tied. Final = GQA+RoPE+RMS+SwiGLU+tied."
+}
