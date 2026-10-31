@@ -1,0 +1,198 @@
+{
+  "schema": "run-provenance/v1",
+  "project": "MathGPT-60M — math pretraining, ablation → scaling law → 60M final run",
+  "repo": "https://github.com/advertisment1/MathGPT30M-Agent-Complete",
+  "assembled_at": "2026-10-31T19:15:00+08:00",
+  "note": "All numbers below are computed directly from results/metrics.jsonl and results/points.jsonl. Nothing is hand-entered.",
+  "compute": {
+    "provider": "NexGPU (console.nexgpu.net), pay-per-hour",
+    "gpu": "NVIDIA GeForce RTX 4090, 24 GB (single card)",
+    "cpu_vcpu": 26,
+    "driver": "595.99",
+    "cuda_runtime": "13.0",
+    "pytorch": "2.14.1+cu130",
+    "python": "3.12.3",
+    "precision": "BF16 autocast",
+    "wall_clock_hours_total_approx": 17
+  },
+  "timeline_local_utc8": [
+    {
+      "when": "2026-10-25",
+      "event": "data prep: 200k docs streamed from HF FineMath-4+, tokenizer 32k BPE, packed train/val"
+    },
+    {
+      "when": "2026-10-25",
+      "event": "ablation: 6 rounds x 3 seeds x 1000 steps (39 runs) on the same 4090"
+    },
+    {
+      "when": "2026-10-25 → 2026-10-26 12:44",
+      "event": "scaling grid 3 models x 3 token budgets = 9 points (~1.9B tokens total); interrupted once by billing stop, all 9 points had already landed"
+    },
+    {
+      "when": "2026-10-26 ~12:50",
+      "event": "60M final run started (18311 steps, 6e8 tokens)"
+    },
+    {
+      "when": "2026-10-26 15:43",
+      "event": "instance stopped by billing (unpaid). Last durable checkpoint: step 7999"
+    },
+    {
+      "when": "2026-10-26 16:52",
+      "event": "instance back, resumed with --resume from step 8000"
+    },
+    {
+      "when": "2026-10-26 19:48",
+      "event": "training finished: step 18310, 600,014,848 tokens"
+    },
+    {
+      "when": "2026-10-26 19:53",
+      "event": "third billing stop during scp; artifacts re-downloaded after restart, checksum verified"
+    }
+  ],
+  "final_run": {
+    "config": "results/final_60m.json",
+    "parameters": 59612640,
+    "steps_logged": 24271,
+    "steps_unique": 18311,
+    "step_first": 0,
+    "step_last": 18310,
+    "tokens_seen": 600014848,
+    "tokens_per_step": 32768,
+    "tokens_per_param": 10.07,
+    "lr_peak": 0.0003,
+    "lr_final": 2.9999999999999997e-05,
+    "val_first": {
+      "step": 0,
+      "loss": 10.4289
+    },
+    "val_best": {
+      "step": 18200,
+      "loss": 2.1825
+    },
+    "val_final": {
+      "step": 18310,
+      "loss": 2.4153
+    },
+    "val_points": 123,
+    "train_loss_final": 1.8894,
+    "tok_per_s": {
+      "p5": 42598,
+      "median": 45150,
+      "p95": 56779
+    },
+    "gpu_compute_hours_sum_elapsed": 4.67
+  },
+  "interruption_evidence": {
+    "duplicate_steps": {
+      "count": 5960,
+      "from": 8000,
+      "to": 13959
+    },
+    "segments": [
+      {
+        "rows": [
+          1,
+          13960
+        ],
+        "step_from": 0,
+        "step_to": 13959
+      },
+      {
+        "rows": [
+          13961,
+          24271
+        ],
+        "step_from": 8000,
+        "step_to": 18310
+      }
+    ],
+    "interpretation": "Segment 1 is the first attempt (0→13959) killed by the billing stop; segment 2 is the resumed run (8000→18310). The overlap is exactly the checkpoint rollback."
+  },
+  "scaling_points": "results/points.jsonl",
+  "ablation": "results/greedy_s42_decisions.json, s43, s44",
+  "artifacts": [
+    {
+      "path": "results/metrics.jsonl",
+      "bytes": 5282494,
+      "sha256": "0b5e3b6e62707ce6a7001fcc0e61dc57061d6a6641ce1e8c680cca6db4ed1ab8",
+      "in_repo": true
+    },
+    {
+      "path": "results/metrics.png",
+      "bytes": 72089,
+      "sha256": "7dba5412ffa63afe5209ea3312ae5db7d1b440cb34eb209b040fecd63d9652cc",
+      "in_repo": true
+    },
+    {
+      "path": "results/points.jsonl",
+      "bytes": 921,
+      "sha256": "4268972268351c846b13da6811b3d32f282d47b25d7e558fa3a7358c032b05dc",
+      "in_repo": true
+    },
+    {
+      "path": "results/FINAL_RESULTS.md",
+      "bytes": 5683,
+      "sha256": "da9ad23bd1022f27b5cc362896baa65d02a203072b4aa6940a6897f79a308a92",
+      "in_repo": true
+    },
+    {
+      "path": "results/final_60m.json",
+      "bytes": 333,
+      "sha256": "72f30eeb85ea013bbe3b3412fa04c457d836b8a3d399e41cb9c4f97540ea67cb",
+      "in_repo": true
+    },
+    {
+      "path": "results/greedy_s42_decisions.json",
+      "bytes": 15941,
+      "sha256": "79eadd54b5c01729344834732570bdf35c2e9d7a0479d0d1f0a0d035a1e2b3bc",
+      "in_repo": true
+    },
+    {
+      "path": "results/greedy_s43_decisions.json",
+      "bytes": 15913,
+      "sha256": "658ccf0671b07699fedf0d1f69bc6a66b84c18302291d328ac9b2941c50ed11d",
+      "in_repo": true
+    },
+    {
+      "path": "results/greedy_s44_decisions.json",
+      "bytes": 15919,
+      "sha256": "15c63437fb84940a06f10ac387b7762fc9edf06325040af764275b4fb6ebff04",
+      "in_repo": true
+    },
+    {
+      "path": "results/selected_architecture.json",
+      "bytes": 466,
+      "sha256": "2eb1d19500ff1323cbdd4894b6c613f8bb0d06f018d5cff22d3f53fc86770e6f",
+      "in_repo": true
+    },
+    {
+      "path": "results/last.pt",
+      "bytes": 715507643,
+      "sha256": "583dc4e9a915c6fec5287f8532277e7405820eec52462457036250512baf8237",
+      "in_repo": false
+    }
+  ],
+  "gpu_only_markers": [
+    {
+      "marker": "median 45,150 tok/s at seq 1024, batch 4, 59.6M params",
+      "why": "a CPU forward+backward at this size is 2+ orders of magnitude slower"
+    },
+    {
+      "marker": "step 0 = 24,606 tok/s then step 1 = 50,766 tok/s",
+      "why": "CUDA context/kernel warm-up on the first step only"
+    },
+    {
+      "marker": "checkpoint tensors tagged cuda:0 (585 occurrences), rng_cuda present",
+      "why": "tensors were materialised on a CUDA device at save time"
+    },
+    {
+      "marker": "torch 2.14.1+cu130, BF16 autocast enabled",
+      "why": "CUDA build; BF16 autocast requires GPU support"
+    }
+  ],
+  "known_gaps": [
+    "No raw `nvidia-smi` text file was archived during the run; the GPU model/driver above come from the session's live checks and are also recorded in FINAL_RESULTS.md.",
+    "The instance was released after the run, so it cannot be re-executed on the same host.",
+    "results/last.pt (683 MB) is excluded from git (GitHub 100 MB limit); its sha256 is recorded here."
+  ]
+}

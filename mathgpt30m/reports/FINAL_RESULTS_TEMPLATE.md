@@ -1,4 +1,8 @@
-# MathGPT-30M 最终结果（模板：尚未运行）
+# MathGPT-60M 最终结果（报告模板）
+
+> 供后续同类实验复用的空白模板。本次实验的完整报告在 [`../../results/FINAL_RESULTS.md`](../../results/FINAL_RESULTS.md)，运行凭证在 [`../../PROVENANCE.md`](../../PROVENANCE.md)。
+>
+> 本次取值速览：RTX 4090 24GB（NexGPU）/ torch 2.14.1+cu130 / 总 GPU ~17 h；9 个 Scaling 点，E=2.832、A=2.566、α=0.652、B=18.200、β=1.010、RMSE=0.043，N*=138.9M；最终 59,612,640 参数，600,014,848 token，best val_loss 2.1825 / final 2.4153。
 
 ## 环境
 - GPU 型号/显存：待填写
@@ -16,9 +20,9 @@
 - E、A、B、alpha、beta：待拟合
 - RMSE / 不确定性：待评估
 - FLOPs 预算定义：待填写
-- 理论 N*、D*：待计算（不改变 30M）
+- 理论 N*、D*：待计算（不改变最终训练规模）
 
-## 30M 正式训练
+## 正式训练（本次 60M）
 - 最终配置/真实参数量：待生成
 - Train/Val loss 曲线：待运行
 - tokens/s、峰值显存：待测

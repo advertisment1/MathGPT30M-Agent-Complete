@@ -20,10 +20,10 @@ All models share `GPT(Config).forward(ids, targets=None, caches=None) -> (logits
 3. Run `python scripts/run_ablations.py` on GPU. Each variant runs independently; results are written to `runs/ablations/<name>/metrics.jsonl` and `summary.json`.
 4. Compare final validation loss, token/s, total parameter count, memory usage, and training variance. Lowest loss alone is **not** enough to pick a winner when parameter counts differ.
 5. Repeat the two most promising configurations using seeds 42, 43, 44; evaluate on identical held-out math tasks before choosing.
-6. Refit the selected architecture to ~30M params (via dim/layers/hidden); recheck parameter count and smoke tests before long training.
+6. Refit the selected architecture to 60M params (via dim/layers/hidden); recheck parameter count and smoke tests before long training.
 
 ## 48 GPU-hour constraints
-The default 120-step grid is a *smoke-scale* architecture screen, not a scientifically conclusive ablation. Benchmark tokens/s first, cap GPU hours, and reserve the bulk for 30M training. Very short runs can rank variants differently from full training. The script currently uses sequential runs and will not enforce a wall-clock budget. Checkpoint/model settings should be recorded for each run.
+The default 120-step grid is a *smoke-scale* architecture screen, not a scientifically conclusive ablation. Benchmark tokens/s first, cap GPU hours, and reserve the bulk for 60M training. Very short runs can rank variants differently from full training. The script currently uses sequential runs and will not enforce a wall-clock budget. Checkpoint/model settings should be recorded for each run.
 
 ## Training vs fine-tuning
 Architecture screening is not SFT. No SFT, DPO or GRPO is included in this variant runner. Mathematical instruction SFT is a separate optional stage after pretraining.
