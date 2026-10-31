@@ -90,7 +90,7 @@ cat results/points.jsonl
 
 **结论：没有找到稳健优于现代 GPT baseline 的改动。** MQA / LayerNorm / GELU 的 loss 优势在 3 seed 下不可复现，属单 seed 短训练的噪声；`untie` 三个 seed 一致更低，但参数量翻倍，不做采用。
 
-### Scaling Law（9 个真实点）
+### Scaling Law（9 个观测点）
 
 | N | 10× token | 20× token | 40× token |
 |---|---|---|---|
